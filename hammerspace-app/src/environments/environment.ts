@@ -2,7 +2,7 @@ export const environment = {
   production: false
 };
 
-const PORT = 5000;
+const PORT = 9152;
 const HOST_DNS = 'localhost';
 const ROOT_PATH = 'api';
 

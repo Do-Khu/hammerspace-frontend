@@ -25,8 +25,10 @@ export class AppLoginComponent implements OnInit {
   LoginProcess(){
     if(this.formGroup.valid){
       this.authService.login(this.formGroup.value).subscribe(Response => {
-        if(Response.token != ''){
+        if(Response.token != undefined){
           alert("logado com sucesso\n"+Response.token);
+        } else {
+          alert("falha no login");
         }
       })
     }
