@@ -75,7 +75,11 @@
               "browserTarget": "hammerspace-app:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "options": {
+            "browserTarget": "hammerspace-app:build",
+            "proxyConfig": "./proxy.conf.json"
+          },
+          "defaultConfiguration": "production"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",

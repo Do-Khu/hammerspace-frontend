@@ -11,9 +11,12 @@ export class AuthService {
   constructor(private http:HttpClient) { }
 
   login(data:any):Observable<any>{
-    const headers ={
-      'Content-Type': 'application/json'
-    };
-    return this.http.post(`${httpUrl}/auth`, data,{headers: headers});
+    let header = new HttpHeaders({
+      'Access-Control-Allow-Origin':'*',
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Allow-Methods': 'POST',
+      'Content-Type':'application/json'
+    });
+    return this.http.post(`${httpUrl}/auth`, JSON.stringify(data),{headers: header});
   }
 }
