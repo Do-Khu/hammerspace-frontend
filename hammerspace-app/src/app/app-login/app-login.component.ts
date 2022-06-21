@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 import * as shajs from 'sha.js';
 
 @Component({
@@ -12,9 +13,13 @@ export class AppLoginComponent implements OnInit {
 
   formGroup!: FormGroup;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
   ngOnInit(): void {
     this.initForm();
+  }
+
+  redirect(path: any):void{
+    this.router.navigate([`${path}`]);
   }
 
   initForm(){
@@ -33,7 +38,7 @@ export class AppLoginComponent implements OnInit {
       this.hashPassword(this.formGroup.value.password);
       this.authService.login(this.formGroup.value).subscribe(Response => {
         if(Response.token != undefined){
-          alert("logado com sucesso\n"+Response.token);
+          this.redirect('main');
         } else {
           alert("Wrong Login or password");
         }
