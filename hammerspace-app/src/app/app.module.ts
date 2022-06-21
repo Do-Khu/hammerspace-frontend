@@ -13,11 +13,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { MainScreenComponent } from './main-screen/main-screen.component';
+import { CookieService } from 'ngx-cookie-service'
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppLoginComponent
+    AppLoginComponent,
+    MainScreenComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,7 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
