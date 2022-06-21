@@ -1,3 +1,114 @@
-body{
-    background-color: pink;
+.main-screen{
+    background-color: #202c33;
+    padding: 0px;
+    margin: 0px;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+.main-screen-cards {
+    height: 30vh;
+    width: 55vw;
+
+    position: absolute;
+
+    background-color: #202c33;
+
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    margin-top: 70vh;
+
+    display: flex;
+    justify-content: initial;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-screen-cards-title {
+    margin-top: 10px;
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    font-size: 24px;
+
+    color: #f0f0f0;
+
+}
+
+.main-screen-cards-content {
+   width: 100%;
+   height: 100%;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.mock-card{
+    margin: 10px;
+    width: 85px;
+    height: 125px;
+}
+
+.main-screen-map {
+    height: 100vh;
+    width: 90vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-screen-map-image {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url('../../assets/map.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.main-screen-map-menu-deck-image{
+    width: 120px;
+    height: 85px;
+    background-image: url('../../assets/deck.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;   
+}
+.main-screen-map-menu-deck-title{
+    color: #f0f0f0;
+
+    text-align: center;
+    font-size: 26px;
+
+    width: 100%;
+    margin-top: 30px;
+}
+
+.main-screen-menu{
+    width: 10vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: #253138;
+
 }
