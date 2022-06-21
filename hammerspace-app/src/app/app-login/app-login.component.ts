@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import * as shajs from 'sha.js';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-app-login',
@@ -13,7 +14,7 @@ export class AppLoginComponent implements OnInit {
 
   formGroup!: FormGroup;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private cookies: CookieService) { }
   ngOnInit(): void {
     this.initForm();
   }
@@ -38,12 +39,13 @@ export class AppLoginComponent implements OnInit {
       this.hashPassword(this.formGroup.value.password);
       this.authService.login(this.formGroup.value).subscribe(Response => {
         if(Response.token != undefined){
+          this.cookies.set('token',Response.token)
           this.redirect('main');
         } else {
-          alert("Wrong Login or password");
+          alert("Ivalid token");
         }
       }, err => {
-        alert("Login fail");
+        alert("Wrong Login or password");
       })
     }
   }
