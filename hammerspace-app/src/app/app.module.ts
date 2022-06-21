@@ -13,11 +13,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { MainScreenComponent } from './main-screen/main-screen.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppLoginComponent
+    AppLoginComponent,
+    MainScreenComponent
   ],
   imports: [
     BrowserModule,
